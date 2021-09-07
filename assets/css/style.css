@@ -1,0 +1,41 @@
+body{
+    margin: 0px;
+  }
+  
+  hr{
+    border-style: solid;
+    border-color: black;
+  
+  }
+  .header{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .card{
+    margin: 15px;
+    background: #024e76;
+    padding: 5px;
+  }
+  /* text for  */
+  .card p{
+    color: white;
+  }
+  .city{
+    border-color: black;
+    border-style: solid;
+  }
+  .main{
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  
