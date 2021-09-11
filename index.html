@@ -1,74 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./assets/styles.css">
-  </head>
-  <body>
-    <header class="header">
-      <h1>Weather Dashboard</h1>
-    </header>
-
-    <section class="main">
-      <div class="side">
-        <h2>Search for a City:</h2>
-        <form class="" action="index.html" method="post">
-
-        </form>
-        <button type="button" name="Search">Search</button>
-        <hr>
-        </div>
-
-      <div class="second">
-
-      <div class="city">
-        <h2>Atlanta (3/30/2021)</h2>
-        <p>Temp: 74.01 °F</p>
-        <p>Wind: 6.67 MPH</p>
-        <p>Humidity: 46%</p>
-        <p>UV Index: <span>0.47</span></p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+  crossorigin="anonymous"
+  />
+  
+  <title>Right-Now Weather</title>
+</head>
+<body>
+    <div class="bg-dark">
+        <h1 class="text-center mb-2 p-2 text-light">Right/Now Weather Dashboard</h1>
       </div>
-
-      <h4>5-Day Forecast:</h4>
-
-      <div class="cards">
-        <div class="card">
-          <p>3/31/2021</p>
-          <p>Temp: 73.72 °F</p>
-          <p>Wind: 9.53 MPH</p>
-          <p>Humidity: 66 %</p>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+                <form>
+                    <div class="input-group m-2 pr-3">
+                        <input type="text" class="form-control" id="citySearchInput" placeholder="Search for a City">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="city-Button"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="w-100">
+                    <ul class="list-group cityList mx-2 mt-3"></ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card shadow m-2">
+                    <div class="card-body cityToday"></div>
+                </div>
+                <div class="m-2">
+                    <h3>5-Day Forecast:</h3>
+                    <div class="forecast row text-light">
+                  </div>
+              </div>
+          </div>
         </div>
-
-        <div class="card">
-          <p>4/1/2021</p>
-          <p>Temp: 49.5 °F</p>
-          <p>Wind: 16.24 MPH</p>
-          <p>Humidity: 30 %</p>
-        </div>
-
-        <div class="card">
-          <p>4/2/2021</p>
-          <p>Temp: 53.38 °F</p>
-          <p>Wind: 6.15 MPH</p>
-          <p>Humidity: 17 %</p>
-        </div>
-
-        <div class="card">
-          <p>4/3/2021</p>
-          <p>Temp: 61.43 °F</p>
-          <p>Wind: 4.12 MPH</p>
-          <p>Humidity: 20 %</p>
-        </div>
-
-        <div class="card">
-          <p>4/4/2021</p>
-          <p>Temp: 69.04 °F</p>
-          <p>Wind: 4.27 MPH</p>
-          <p>Humidity: 24 %</p>
-        </div>
-      </div>
     </div>
-    </section>
-  </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
 </html>
