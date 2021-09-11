@@ -16,31 +16,16 @@ function saveSearchCity(city) {
 
 
 // gets current weather and uv index 
+function getUVI(id, cityLat, cityLong) {
+    var uvURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${cityLat}&lon=${cityLong}&appid=${id}`;
 
-var currentWeather = function(cityName) {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial')
-    .then(function(res) {
-        return res.json();
-    }
-    .then(function(data) {
-
-        console.log("current weather: ", data);
-        const template = `
-        <h2 class="subtitle col-md-6">${data.name} (${new Date().toLocaleDateString()})</h2>
-        <i class=icon col-md-4><img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png"/></i>
-        
-        <ul>
-            <li>Temp: ${data.main.temp}</li>
-            <li>Wind: ${data.wind.speed}</li>
-            <li>Humidity: ${data.main.humidity}</li>
-            <li>UV Index</li>
-        </ul>
-        `
-
-        document.querySelector("#today").innerHTML = template;
-    }
-};
-
+    $.ajax({
+        url: uvURL,
+        method: "GET"
+    }).then(function (data) {
+        $(".cityToday").append(`<p>UV Index: <span class="badge badge-danger p-2">${data.value}</span></p>`);
+    })
+}
 
 // api function for city
 
@@ -50,3 +35,20 @@ var currentWeather = function(cityName) {
 // 5 day forecast for current city
 
 
+
+
+//Using google autocomplete API
+let autocomplete;
+
+function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById("inputCity"),
+    {
+      types: ["(cities)"],
+      componentRestrictions: {
+        country: "us",
+      },
+    }
+  );
+  autocomplete.addListener("place_changed", onCityChanged);
+}
