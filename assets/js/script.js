@@ -46,8 +46,8 @@ function fiveDay(citylat, citylong) {
       method: "GET"
   }).then(function (data) {
     for (let i = 1; i <= 5; i++) {
-
       // for loop dynamically 
+      // added too many days after button gets pushed need to correct
       console.log(data)
       $(".forecast").html( $('.forecast').html()+
         `<div class="card text-white bg-primary" style="max-width: 14rem;">
