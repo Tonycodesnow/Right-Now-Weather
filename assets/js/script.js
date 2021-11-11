@@ -9,15 +9,26 @@ console.log("hello")
 var cities = []
 // var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
+function cityToday(cityName, cityTemp) {
+  let today = new Date().toLocaleDateString()
+  $("#cityToday").html( $('#cityToday').html()+
+  `<h1>${cityName} (${today})</h1>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <p></p>`)
+  console.log(cityName)
+  console.log(cityTemp)
+}
 
 // function for city search
 function citySearch(event) {
     event.preventDefault()
     var cityName = $("#citySearchInput").val()
-    fetch(weatherURL+cityName+"&apiKey="+apiKey).then(function(res){
+    fetch(`${weatherURL}${cityName}&apiKey=${apiKey}&units=imperial`).then(function(res){
       return res.json()
     }).then(function(data){
-      console.log(data)
+      console.log("Current conditions", data)
+      cityToday(data.name, data.main.temp)
       fiveDay(data.coord.lat,data.coord.lon)
     })
 }
@@ -81,12 +92,14 @@ function fiveDay(citylat, citylong) {
       // http://openweathermap.org/img/wn/10d@2x.png
       iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
       iconid[i]= 'wicon' + i;
-      console.log(iconurl)
+      console.log(iconurl);
+      console.log(data.daily[i].dt)
+      let date = new Date(data.daily[i].dt * 1000).toLocaleDateString()
       $(".forecast").html( $('.forecast').html()+
         `<div class="card text-white shadow bg-primary" style="max-width: 14rem;">
-        <div class="card-header">${''}</div>
+        <div class="card-header">${date}</div>
         <div class="card-body">
-        <div id="icon"><img id=${iconid[i]} src='' alt="Weather icon"></div>
+        <div id="icon"><img id=${iconid[i]} src='https://openweathermap.org/img/wn/${iconcode}.png' alt="Weather icon"></div>
         <p class="card-text">Temp: ${data.daily[i].temp.day}</p>
         <p class="card-text">Wind: ${data.daily[i].wind_speed}</p>
         <p class="card-text">Humidity: ${data.daily[i].humidity}</p>
