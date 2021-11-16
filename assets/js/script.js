@@ -96,7 +96,7 @@ function fiveDay(citylat, citylong) {
       console.log(data.daily[i].dt)
       let date = new Date(data.daily[i].dt * 1000).toLocaleDateString()
       $(".forecast").html( $('.forecast').html()+
-        `<div class="card text-white shadow bg-primary" style="max-width: 14rem;">
+        `<div class="card text-white shadow bg-primary" style="max-width: 10rem;">
         <div class="card-header">${date}</div>
         <div class="card-body">
         <div id="icon"><img id=${iconid[i]} src='https://openweathermap.org/img/wn/${iconcode}.png' alt="Weather icon"></div>
