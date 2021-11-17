@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-
-
+  
 const apiKey = "5ebc62dbb075ae790774030d6f65bde8"
 var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 var units = "&units=imperial"

@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-  integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-  crossorigin="anonymous"
-  />
-  <link rel="stylesheet" href="./assets/css/style.css"/>
-  <title>Right-Now Weather</title>
-</head>
-<body>
-    <div class="bg-dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Right-Now Weather</title>
+  </head>
+  <body>
+    <header class="bg-dark">
       <h1 class="text-center mb-2 p-2 text-light">Right/Now Weather Dashboard</h1>
-    </div>
-
-    <div class="container-fluid">
+    </header>
+    
+    <section class="hero container-fluid">
       <div class="row">
         <!-- Search box -->
         <div class="col-3">
           <form>
             <div class="input-group m-2 pr-3">
               <input
-                type="text"
-                class="form-control"
-                id="citySearchInput"
-                placeholder="Search for a City">
-              </input>
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit" id="city-Button">
-                  <i class="fas fa-search">Search</i>
-                </button>
-              </div>
+              type="text"
+              class="form-control"
+              id="citySearchInput"
+              placeholder="Search for a City">
+            </input>
+            <div class="input-group-append cityList">
+              <button class="btn btn-outline-secondary" type="submit" id="city-Button">
+                <i class="fas fa-search">Search</i>
+              </button>
             </div>
-          </form>
-          <!-- history buttons rendered here -->
-          <div class="w-100">
-              <ul class="list-group cityList mx-2 mt-3"></ul>
           </div>
-          
+        </form>
+        <!-- history buttons rendered here -->
+        <div class="w-100">
+          <ul class="list-group mx-2 mt-3"></ul>
         </div>
-        <!-- Weather info rendered here -->
-        <div class="col-md-9">
-          <!-- Current Conditions -->
-          <div class="card shadow m-2">
-            
-            <div class="jumbotron" id="cityToday"></div>
-          </div>
-          <div class="m-2">
-            <!-- 5 days pop up here -->
-            <h3>5-Day Forecast:</h3>
-            <div class="forecast row text-light"></div>
-          </div>
+        
+      </div>
+      <!-- Weather info rendered here -->
+      <div class="col-md-9">
+        <!-- Current Conditions -->
+        <div class="card shadow m-2">
+          
+          <div class="jumbotron" id="cityToday"></div>
+        </div>
+        <div class="m-2">
+          <!-- 5 days pop up here -->
+          <h3>5-Day Forecast:</h3>
+          <div class="forecast row text-light"></div>
+        </div>
         </div>
       </div>
-    </div>
+    </section>
+  </body>
+  <footer class="bg-dark">
+    <p class="text-center text-light">&copy; 2021</p>
     <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity=
-"sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity=
+    "sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
-</html>
+    <script src="./assets/js/script.js"></script>
+  </footer>
+  </html>
