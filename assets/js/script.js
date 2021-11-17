@@ -11,10 +11,12 @@ var cities = []
 function cityToday(cityName, cityTemp) {
   let today = new Date().toLocaleDateString()
   $("#cityToday").html( $('#cityToday').html()+
+  `<h4>${cityName} (${today})>${cityTemp}</h4>
+  `)
+  $('.jumbotron').html(
   `<h1>${cityName} (${today})</h1>
-  <p class="lead"></p>
   <hr class="my-4">
-  <p></p>`)
+  <p>${cityTemp}</p>`)
   console.log(cityName)
   console.log(cityTemp)
 }
@@ -32,11 +34,6 @@ function citySearch(event) {
     })
 }
 
-// store city search list to loco storage
-function saveSearchCity(city) {
-    localStorage.setItem("cities", JSON.stringify(cityList));
-}
-
 // gets current weather and uv index 
 function getUVI(id, cityLat, cityLong) {
     var uvURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${cityLat}&lon=${cityLong}&appid=${id}`;
@@ -46,6 +43,7 @@ function getUVI(id, cityLat, cityLong) {
         method: "GET"
     }).then(function (data) {
       // console.log(data.value);
+      $(".jumbotron").html(`<p>UV Index: <span class="badge badge-danger p-2">${data.value}</span></p>`);
         $(".cityToday").append(`<p>UV Index: <span class="badge badge-danger p-2">${data.value}</span></p>`);
     })
 }

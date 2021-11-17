@@ -1,3 +1,7 @@
+* {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 header{
     
     background-position: 100%;
@@ -6,18 +10,62 @@ header{
     flex-wrap: wrap;
 }
 
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+    color:rgb(252, 252, 252);
+    /* text-shadow: rgba(0, 0, 0, 0.16); */
+    font-style: oblique;
+    font-weight: 700;
+}
+
 body {
     background-color: rgb(28, 25, 25);
 }
 footer {
     background-position: 100%;
+    border: rgb(55, 122, 149);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+input[type=text] {
+    width: 140px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    color: navy;
+    font-size: 18px;
+    background-color: white;
+    /* background-image: url('searchicon.png'); */
+    background-position: 8px 8px; 
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+  }
+/* .past {
+    
+} */
 
+/* make the city-Button blue */
+.btn {
+    background-color: cornflowerblue;
+    color: white;
+}
 
+.btn:hover {
+    background-color: darkgreen;
+
+}.space {
+    padding: 20px;
+}
 .hero {
     background-attachment: fixed;
     background-position: 100%;
