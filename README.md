@@ -8,7 +8,7 @@
 - [Description](#description)
 - [Screenshots](#screenshots)
 - [Deployed](#deployedapplicationlink)
-- [Tools/Languages](#Tools/languages)
+- [Tools/Languages](#tools/languages)
 - [License](#license)
 - [Questions](#questions)
 
