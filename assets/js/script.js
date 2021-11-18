@@ -8,17 +8,18 @@ console.log("hello")
 var cities = []
 // var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
-function cityToday(cityName, cityTemp) {
+function cityToday(cityName, cityTemp, cityWind) {
   let today = new Date().toLocaleDateString()
   $("#cityToday").html( $('#cityToday').html()+
-  `<h4>${cityName} (${today})>${cityTemp}</h4>
+  `<h3>${cityName} (${today})${cityTemp}(F)<br></h3>
   `)
   $('.jumbotron').html(
   `<h1>${cityName} (${today})</h1>
   <hr class="my-4">
-  <p>${cityTemp}</p>`)
+  <p>${cityTemp}(F)</p>`)
   console.log(cityName)
   console.log(cityTemp)
+  console.log(cityWind)
 }
 
 // function for city search
@@ -47,10 +48,6 @@ function getUVI(id, cityLat, cityLong) {
         $(".cityToday").append(`<p>UV Index: <span class="badge badge-danger p-2">${data.value}</span></p>`);
     })
 }
-
-// api function for city
-
-// function for current weather
 
 let iconcode;
 let iconurl;
